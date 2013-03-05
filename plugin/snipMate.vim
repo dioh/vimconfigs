@@ -244,4 +244,5 @@ fun! ShowAvailableSnips()
 	call complete(col, matches)
 	return ''
 endf
+
 " vim:noet:sw=4:ts=4:ft=vim
