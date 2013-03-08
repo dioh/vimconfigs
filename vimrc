@@ -65,9 +65,7 @@ set softtabstop=4
 filetype plugin on
 set ofu=syntaxcomplete#Complete
 
-map T :TaskList<CR>
-map P :TlistToggle<CR>
-
+map <C-t> :TaskList<CR>
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " NERD_tree config
@@ -75,18 +73,18 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-map F :NERDTreeToggle<CR>
+map <C-f> :NERDTreeToggle<CR>
 
 " " Syntax for multiple tag files are
 " " set tags=/my/dir1/tags, /my/dir2/tags
-" set tags=tags;$HOME/.vim/tags/
+set tags=tags,$HOME/.vim/tags/,./tags
 "
 " " TagList Plugin Configuration
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd='$HOME/.vim/tags/'
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_File_Fold_Auto_Close = 1
-map <S-l> :TlistToggle<CR>
+map <C-l> :TagbarToggle<CR>
 "
-
+set runtimepath^=~/.vim/bundle/ctrlp.vim
